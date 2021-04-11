@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+	<title>飞嗒</title>
+	<link rel="stylesheet" href="../css/framework7-bundle.css">
+	<!-- <link rel="stylesheet" href="../css/colorPicker.css"> -->
+	<link rel="stylesheet" href="../css/index.css" />
+	<link rel="stylesheet" href="../css/clip.css" />
+	<link rel="stylesheet" href="../css/upload.css" />
+	<link rel="stylesheet" href="../css/evaluate.css" />
+	<link rel="stylesheet" href="../css/general.css" />
+	<link rel="stylesheet" href="../css/effect.css" />
+	<link rel="stylesheet" href="../css/collocation.css" />
+	<link rel="stylesheet" href="../css/preview.css">
+	<link rel="stylesheet" href="../css/related.css" />
+	<script src="../js/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="fake">
+		<input type="image" id="setting" src="../icon/Component/setting.png" />
+		<div id="center">
+			<img src="../icon/Component/cloth.png" id="cloth" />
+			<div id="V-center"></div>
+		</div>
+		<input type="file" id="file" style="display: none;">
+		<button id="start">开始</button>
+	</div>
+
+	<div id="true">
+		<div id="top">
+			<input type="image" id="backToIndex" class="backward" src="../icon/Component/backward.png" />
+		</div>
+		<img src="" id="photo" alt="" />
+		<button id="toScene">下一步</button>
+	</div>
+
+	<!-- 选择场景 -->
+	<div id="scene">
+		<div id="dragBar"></div>
+		<div class="decoration"></div>
+		<span class="title">场景</span>
+		<input type="text" name="search" class="srcInput" placeholder="快来输入你今天想穿搭的场景吧！" />
+		<div class="searchContainer">
+			<input type="image" class="search" src="../icon/Component/search.png" />
+		</div>
+		<span id="usual">常用</span>
+		<div id="usualCont">
+			<!-- <button class="usuals">
+                <span>逛街</span>
+            </button>
+            <button class="usuals">
+                <span>上班</span>
+            </button> -->
+		</div>
+		<span id="recommend">为您推荐</span>
+		<input type="image" src="../icon/Component/refresh.png" class="refresh" />
+		<div id="recommendCont">
+			<!-- <button class="recommends">
+                <span>周末出去玩</span>
+            </button>
+            <button class="recommends">
+                <span>参加同学聚会</span>
+            </button>
+            <button class="recommends">
+                <span>见导师</span>
+            </button> -->
+		</div>
+		<div id="btns">
+			<button id="toUpload" class="last">上一步</button>
+			<button id="toStyle" class="next">下一步</button>
+		</div>
+	</div>
+
+	<!-- 选择风格 -->
+	<div id="style">
+		<div id="dragBar"></div>
+		<div class="decoration"></div>
+		<span class="title">风格</span>
+		<input type="text" name="search" class="srcInput" placeholder="快来输入你今天想穿搭的风格吧！" />
+		<div class="searchContainer">
+			<input type="image" class="search" src="../icon/Component/search.png" />
+		</div>
+		<span id="usual">常用</span>
+		<div id="usualCont">
+			<!-- <button class="usuals">
+                <span>简约风</span>
+            </button>
+            <button class="usuals">
+                <span>甜美</span>
+            </button> -->
+		</div>
+		<span id="recommend">为您推荐</span>
+		<input type="image" src="../icon/Component/refresh.png" class="refresh" />
+		<div id="recommendCont">
+			<!-- <button class="recommends">
+                <span>休闲风</span>
+            </button>
+            <button class="recommends">
+                <span>少女系</span>
+            </button>
+            <button class="recommends">
+                <span>文艺风</span>
+            </button> -->
+		</div>
+		<div id="btns">
+			<button id="_toScene" class="last">上一步</button>
+			<button id="confirm" class="next">确认</button>
+		</div>
+	</div>
+
+	<!-- 搭配建议 -->
+	<div id="evaluate">
+		<div id="top">
+			<input type="image" id="backToStyle" class="backward" src="../icon/Component/backward.png" />
+			<span>搭配建议</span>
+		</div>
+		<div id="text">
+			<div id="tag">
+				<span id="sceneTag"></span>
+				<span id="styleTag"></span>
+			</div>
+			<textarea id="txt" readonly="readonly"></textarea>
+			<button id="toEffect">查看效果</button>
+		</div>
+	</div>
+
+	<!-- 查看效果 -->
+	<div id="effect">
+		<div id="top">
+			<input type="image" id="backToEvaluate" class="backward" src="../icon/Component/backward.png" />
+			<span>效果预览</span>
+		</div>
+		<div>
+			<img src="../icon/logo.png" id="efct" alt="" />
+			<button id="toFree">自由搭配</button>
+		</div>
+	</div>
+
+	<!-- 自由搭配 -->
+	<div id="collocation">
+		<div id="top">
+			<input type="image" id="backToEffect" class="backward" src="../icon/Component/backward.png" />
+			<span>自由搭配</span>
+			<span id="complete">完成</span>
+		</div>
+		<div id="clothChooser">
+
+		</div>
+		<div id="operation">
+			<div id="chooser">
+				<div id="chooseColor"><span>颜色</span></div>
+				<div id="chooseStyle"><span>图案</span></div>
+			</div>
+			<div id="container">
+				<div id="colors">
+					<div class="myColour" style="background-color: black;"></div>
+					<div colorName="藏青色" class="colour" colorId="3" style="background-color: navy"></div>
+					<div colorName="鹅黄色" class="colour" colorId="4" style="background-color: lightyellow"></div>
+					<div colorName="玫红色" class="colour" colorId="5" style="background-color: #FE007F"></div>
+					<div colorName="宝蓝色" class="colour" colorId="6" style="background-color: royalblue"></div>
+					<div colorName="卡其色" class="colour" colorId="7" style="background-color: khaki"></div>
+					<div colorName="少女粉" class="colour" colorId="8" style="background-color: pink"></div>
+					<div colorName="淡雅粉" class="colour" colorId="9" style="background-color: lightpink"></div>
+					<div colorName="白杏色" class="colour" colorId="10" style="background-color: blanchedalmond"></div>
+					<div colorName="天蓝色" class="colour" colorId="11" style="background-color: skyblue"></div>
+					<div colorName="紫罗兰" class="colour" colorId="12" style="background-color: violet"></div>
+					<div colorName="珊瑚色" class="colour" colorId="13" style="background-color: coral"></div>
+					<div colorName="巧克力" class="colour" colorId="14" style="background-color: chocolate"></div>
+					<div colorName="森林绿" class="colour" colorId="15" style="background-color: forestgreen"></div>
+				</div>
+				<div id="styles">
+					<div class="preStyles" id="KaTong">
+						<img src="../icon/Style/KaTong.jpg"></img>
+						<span>卡 通</span>
+					</div>
+					<div class="preStyles" id="WenLi">
+						<img src="../icon/Style/WenLi.jpg"></img>
+						<span>纹 理</span>
+					</div>
+					<div class="preStyles" id="QingXin">
+						<img src="../icon/Style/QingXin.jpg"></img>
+						<span>清 新</span>
+					</div>
+					<div class="preStyles" id="GuFeng">
+						<img src="../icon/Style/GuFeng.jpg"></img>
+						<span>古 风</span>
+					</div>
+					<div id="ZiDingYi">
+						<img src="../icon/Style/ZiDingYi.jpg"></img>
+						<span>自 定 义</span>
+					</div>
+				</div>
+				<div id="styleDetails">
+					<!-- <div id="back">
+							<img src="../icon/Style/FanHui.jpg"></img>
+						</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 裁剪图片 -->
+	<div id="cutting">
+		<div id="clipArea"></div>
+		<input type="image" src="../icon/Clip/turn.png" id="clipTurn" alt="">
+		<div class="clipBtns" id="clipCancel" onclick="window.location.href = './index.html'">
+			<input type="image" id="clipCancel" src="../icon/Clip/false.png" alt="">
+		</div>
+		<div class="clipBtns" id="clipBtn">
+			<input type="image" id="clipBtn" src="../icon/Clip/true.png" alt="">
+		</div>
+	</div>
+
+	<!-- 搭配预览 -->
+	<div id="preview">
+		<div id="top">
+			<input type="image" id="backToFree" class="backward" src="../icon/Component/backward.png" />
+		</div>
+		<img id="prev">
+		<div id="btns">
+			<button id="save">保存美图</button>
+			<button id="purchase">工厂定制</button>
+			<button id="toRelated">相关搭配</button>
+		</div>
+	</div>
+
+	<!-- 相关搭配 -->
+	<div id="related">
+		<div id="top">
+			<input type="image" id="backToPrev" class="backward" src="../icon/Component/backward.png" />
+			<span>相关搭配</span>
+			<input type="image" src="../icon/Component/index.png" id="jumpToIndex" />
+		</div>
+		<div id="associated">
+			<div id="container1"></div>
+			<div id="container2"></div>
+		</div>
+	</div>
+
+	<!-- 相机图库选择框 -->
+	<div id="CoASelector">
+		<div id="closeCoA"></div>
+		<div id="selector">
+			<input type="image" src="../icon/Component/camera.png">
+			<input type="image" src="../icon/Component/album.png">
+		</div>
+	</div>
+
+	<!-- 色彩选取提示框 -->
+	<div id="colorInfo">
+		<span></span>
+	</div>
+
+	<!-- 退出程序提示框 -->
+	<div id="exitInfo">
+		<span>再按一次退出应用</span>
+	</div>
+
+	<script type="text/javascript">
+		var deviceWidth = document.body.clientWidth;
+		var deviceHeight = document.body.clientHeight;
+		var cookieStr, cNum;
+		var aiboost, texture;
+		var cName = new Array();
+		var cVal = new Array();
+		var cookies = new Array();
+		var ourServerURL = "http://118.195.129.134/";
+		var scene = "";
+		var style = "";
+
+		function plusReady() {
+			// 设置系统状态栏背景色
+			plus.navigator.setStatusBarBackground('#FFC33A');
+			plus.navigator.setStatusBarStyle('light');
+			var activity = plus.android.runtimeMainActivity();
+			var AIBoost = plus.android.importClass("io.dcloud.FIT.AIBoost");
+			var Texture = plus.android.importClass("io.dcloud.FIT.Texture");
+			aiboost = new AIBoost(activity);
+			texture = new Texture(activity);
+			var yourVersion = plus.runtime.version; // 开机获取App版本号
+			$.ajax({
+				type: 'POST',
+				url: 'http://121.4.250.38:8080/download/Update',
+				data: {
+					version: yourVersion,
+				},
+				dataType: 'json',
+				success(msg) {
+					if (msg.need != "0") {
+						// plus.nativeUI.confirm("发现新版本！是否要更新？", voidFunc,"自动更新",["立即更新","跳过此版本"]);
+						plus.nativeUI.showWaiting("下载更新文件...");
+						plus.downloader.createDownload(msg.link, { filename: "_doc/update/" }, function (d, status) {
+							if (status == 200) {
+								plus.nativeUI.closeWaiting();
+								console.log("下载更新成功：" + d.filename);
+								plus.nativeUI.showWaiting("安装更新文件..."); // 安装更新包
+								plus.runtime.install(d.filename, {}, function () {
+									plus.nativeUI.closeWaiting();
+									console.log("安装更新文件成功！");
+									plus.nativeUI.alert("应用资源更新完成！", function () {
+										plus.runtime.restart();
+									});
+								}, function (e) {
+									plus.nativeUI.closeWaiting();
+									console.log("安装更新文件失败[" + e.code + "]：" + e.message);
+									plus.nativeUI.alert("安装更新文件失败[" + e.code + "]：" + e.message);
+								});
+							} else {
+								plus.nativeUI.closeWaiting();
+								console.log("下载更新失败！");
+								plus.nativeUI.alert("下载更新失败！");
+							}
+						}).start();
+					}
+				},
+				error() {
+					console.log("啊哦！服务器好像出了点问题");
+				}
+			});
+
+			cookieStr = plus.navigator.getCookie(ourServerURL + 'user/signin');
+			cookies = cookieStr.split(';');
+			cNum = cookies.length;
+			for (var i = 0; i < cNum; i++) {
+				cName[i] = cookies[i].split('=')[0];
+				cVal[i] = cookies[i].split('=')[1];
+			}
+		}
+
+		if (window.plus) {
+			plusReady();
+		} else {
+			document.addEventListener('plusready', plusReady, false);
+		}
+	</script>
+	<script src="../js/framework7-bundle.js"></script>
+	<script src="../js/cookie.js"></script>
+	<script src="../js/dragDown.js"></script>
+	<script src="../js/clipPhoto/iscroll-zoom.js"></script>
+	<script src="../js/clipPhoto/hammer.js"></script>
+	<script src="../js/clipPhoto/bundle.js"></script>
+	<script src="../js/clipPhoto/jquery.photoClip.js"></script>
+	<script src="../js/clipPhoto.js"></script>
+	<script src="../js/camera.js"></script>
+	<script src="../js/album.js"></script>
+	<script src="../js/save.js"></script>
+	<script src="../js/quit.js"></script>
+	<script src="../js/BullShit.js"></script>
+	<script src="../js/operation.js"></script>
+	<script src="../js/changePage.js"></script>
+	<script src="../js/addTag.js"></script>
+	<script src="../js/resize.js"></script>
+	<script src="../js/related.js"></script>
+</body>
+
+</html>

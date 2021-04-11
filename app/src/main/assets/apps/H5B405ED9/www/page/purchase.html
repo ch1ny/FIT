@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工厂定制</title>
+    <link rel="stylesheet" href="../css/purchase.css">
+    <script src="../js/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="center">
+        <img src="../icon/logo.png" id="logo">
+        <div id="V-center"></div>
+    </div>
+    <div>
+        <input type="text" id="address" class="input" placeholder="请输入您的住址"><br>
+        <input type="tel" id="tel" class="input" placeholder="请输入您的电话号码" oninput="value=value.replace(/[^\d]/g,'')"
+            maxlength="11"><br>
+        <span>请选择您的尺码：</span>
+        <div id="sizes">
+            <div class="radio">
+                <input id="radio-1" name="radio" type="radio" checked>
+                <label for="radio-1" class="radio-label">S</label>
+            </div>
+            <div class="radio">
+                <input id="radio-2" name="radio" type="radio">
+                <label for="radio-2" class="radio-label">M</label>
+            </div>
+            <div class="radio">
+                <input id="radio-3" name="radio" type="radio">
+                <label for="radio-3" class="radio-label">L</label>
+            </div>
+            <div class="radio">
+                <input id="radio-4" name="radio" type="radio">
+                <label for="radio-4" class="radio-label">XL</label>
+            </div>
+            <div class="radio">
+                <input id="radio-5" name="radio" type="radio">
+                <label for="radio-5" class="radio-label">XXL</label>
+            </div>
+        </div>
+    </div>
+    <button id="purchase">工厂定制</button>
+
+    <script type="text/javascript">
+        document.addEventListener('plusready', function (a) {
+            plus.navigator.setStatusBarBackground('#FFC33A');
+            plus.navigator.setStatusBarStyle('light');
+            plus.key.addEventListener('backbutton', function () {
+                plus.webview.currentWebview().close();
+                plus.navigator.setStatusBarBackground('#FFF8E6');
+                plus.navigator.setStatusBarStyle('dark');
+            }, false);
+        });
+
+        $(document).ready(function () {
+            //屏幕当前的高度
+            var oHeight = $(window).height();
+            $(window).resize(function () {
+                if ($(window).height() < oHeight) {
+                    $('#center').css({
+                        "top": 0.05 * oHeight + "px"
+                    });
+                    $('#address').css({
+                        "top": 0.46 * oHeight + "px",
+                    });
+                    $('#tel').css({
+                        "top": 0.54 * oHeight + "px",
+                    });
+                    $('span').css({
+                        "top": 0.63 * oHeight + "px",
+                    });
+                    $('#sizes').css({
+                        "top": 0.67 * oHeight + "px",
+                    });
+                    $('#purchase').css({
+                        "top": 0.8 * oHeight + "px",
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

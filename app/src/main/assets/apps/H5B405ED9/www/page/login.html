@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>登录</title>
+	<link rel="stylesheet" href="../css/login.css" />
+	<script src="../js/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="center">
+		<img src="../icon/logo.png" id="logo" />
+		<div id="V-center"></div>
+	</div>
+	<div>
+		<input type="text" id="nick" placeholder="请输入您的昵称" class="input" /><br />
+		<input type="password" id="psw" placeholder="请输入您的密码" class="input" />
+	</div>
+	<button id="login" class="btn">登录</button>
+	<button id="register" class="btn">注册</button>
+
+	<script type="text/javascript">
+		$('#login').click(() => {
+			var nick = $('#nick').val();
+			var psw = $('#psw').val();
+			var warning = false;
+			var warn = '';
+			if (nick == '') {
+				warning = true;
+				warn += '请输入昵称\n';
+			}
+			if (psw == '') {
+				warning = true;
+				warn += '请输入密码\n';
+			}
+			if (warning) {
+				alert(warn);
+			} else {
+				plus.nativeUI.showWaiting("正在登录...");
+				$.ajax({
+					type: 'POST',
+					url: 'http://118.195.129.134/user/signin',
+					data: {
+						nickName: nick,
+						passWord: psw,
+					},
+					dataType: 'json',
+					success(msg) {
+						plus.nativeUI.closeWaiting();
+						if (msg.ret == 0) {
+							// 登录成功;
+							plus.navigator.setCookie('http://118.195.129.134/user/signin', 'user=' + encodeURI(nick) + '; expires=Tuesday,19-Jan-2038 03:14:07 GMT; path=/');
+							window.location.href = './index.html';
+						} else {
+							alert('用户名或密码输入不正确！');
+						}
+					},
+					error() {
+						plus.nativeUI.closeWaiting();
+						alert("啊哦！服务器好像出了点问题呢！");
+					}
+				});
+			}
+		});
+
+		$('#register').click(() => {
+			plus.webview.open("./register.html");
+		});
+
+		document.addEventListener('plusready', function (a) {
+			plus.key.addEventListener(
+				'backbutton',
+				function () {
+					plus.webview.currentWebview().close();
+				}, false);
+		});
+	</script>
+</body>
+
+</html>

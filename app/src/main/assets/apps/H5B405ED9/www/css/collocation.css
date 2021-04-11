@@ -1,0 +1,166 @@
+#collocation {
+	display: none;
+}
+
+#complete {
+	width: 10vw;
+	height: 100%;
+	position: absolute;
+	right: 5vw;
+	color: #ffc33a;
+	font-size: 75%;
+}
+
+#clothChooser {
+	width: 10vw;
+	height: 73vh;
+	position: absolute;
+	left: 0%;
+	top: 7vh;
+}
+
+.clothes {
+	width: 10vw;
+	height: 10vw;
+	position: relative;
+	margin-top: 5vw;
+	margin-bottom: 5vw;
+	background-color: #cccccc;
+	border-radius: 50%;
+	border: 2.5px solid #cccccc;
+}
+
+.clothes.selected {
+	border: 2.5px solid #ffc33a;
+}
+
+.clothes img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#operation {
+	width: 100%;
+	height: 20vh;
+	position: absolute;
+	left: 0%;
+	top: 100vh;
+	background-color: #f1f1f1;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+#operation #chooser {
+	height: 30%;
+	width: 100%;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	color: #969696;
+	text-align: center;
+}
+
+#operation #chooser div {
+	display: inline-block;
+	margin-left: 10vw;
+	margin-right: 10vw;
+	width: 25vw;
+	height: 5vh;
+	position: relative;
+	top: 1vh;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	font-family: initial;
+	line-height: 5vh;
+}
+
+#operation #chooser div:first-child {
+	background-color: #ffffff;
+	color: #ffc33a;
+}
+
+#operation #container {
+	width: 100%;
+	height: 70%;
+	position: absolute;
+	left: 0%;
+	top: 6vh;
+	background-color: #ffffff;
+}
+
+#operation #container div {
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+	white-space: nowrap;
+}
+
+#operation #container #colors div {
+	width: 12.5vw;
+	height: 12.5vw;
+	position: relative;
+	top: 3.5vh;
+	margin-left: 3vw;
+	margin-right: 3vw;
+	border: 2.5px solid #ffffff;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+#operation #container #colors .myColour {
+	background-image: linear-gradient(135deg, #92fe9d 0%, #00c9ff 100%);
+}
+
+#operation #container #colors .selected,
+#operation #container #styles .selected,
+#operation #container #styleDetails .selected {
+	border: 2.5px solid #ffc33a;
+}
+
+#operation #container #styles div {
+	position: relative;
+	background-color: #ffffff;
+	width: 12.5vw;
+	top: 15%;
+	height: 70%;
+	display: inline-block;
+	margin-left: 3vw;
+	margin-right: 3vw;
+	text-align: center;
+	border: 2.5px solid #ffffff;
+	border-radius: 12.5px;
+}
+
+#operation #container #styles div img {
+	width: 12.5vw;
+	height: 12.5vw;
+	border-radius: 10px;
+}
+
+#operation #container #styles div span {
+	width: 100%;
+	position: absolute;
+	top: 13vw;
+	left: 0%;
+	font-family: initial;
+	font-size: 80%;
+	color: #ababab;
+}
+
+#operation #container #styleDetails div {
+	width: 12.5vw;
+	height: 12.5vw;
+	position: relative;
+	top: 3.5vh;
+	margin-left: 3vw;
+	margin-right: 3vw;
+	border: 2.5px solid #ffffff;
+	border-radius: 12.5px;
+	display: inline-block;
+}
+
+#operation #container #styleDetails div img {
+	width: 100%;
+	height: 100%;
+}

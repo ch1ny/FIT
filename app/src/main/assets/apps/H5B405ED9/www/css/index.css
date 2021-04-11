@@ -1,0 +1,168 @@
+* {
+	/* 禁用长按选中以免引发UI错位 */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+body {
+	background-color: #ffc33a;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0%;
+}
+
+#setting {
+	outline: none;
+	/* 去除点击时的图片底色 */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	height: 5%;
+	position: absolute;
+	right: 5%;
+	top: 5vw;
+}
+
+#center {
+	background-color: white;
+	width: 80%;
+	height: 80vw;
+	position: absolute;
+	left: 10%;
+	top: 20vh;
+	border-radius: 30px;
+	border-bottom-left-radius: 25px;
+	border: none;
+}
+
+#center::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 4px;
+	left: -4px;
+	border-top-right-radius: 50px;
+	border-radius: 30px;
+	background: linear-gradient(to right, rgb(230, 230, 230), white 2%);
+	z-index: -1;
+}
+
+#center::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: -4px;
+	left: 4px;
+	border-top-right-radius: 50px;
+	border-radius: 30px;
+	background: linear-gradient(to top, rgb(230, 230, 230), white 2%);
+	z-index: -2;
+}
+
+#V-center {
+	width: 80%;
+	height: 80vw;
+	position: absolute;
+	left: -4px;
+	bottom: -4px;
+	border-radius: 30px;
+	border: none;
+	z-index: -2;
+	background: linear-gradient(135deg, rgb(212, 212, 212), white);
+}
+
+#cloth {
+	width: 50vw;
+	height: 50vw;
+	position: relative;
+	left: 14vw;
+	top: 15vw;
+}
+
+#start {
+	width: 50%;
+	height: 17vw;
+	position: absolute;
+	left: 25%;
+	bottom: 30vw;
+	background: white;
+	border: none;
+	color: #ffc33a;
+	font-family: '黑体';
+	font-size: 170%;
+	font-weight: 1000;
+	border-radius: 30px;
+	outline: none;
+}
+
+#start::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: -4px;
+	left: -2px;
+	border-top-right-radius: 50px;
+	border-radius: 30px;
+	background: linear-gradient(45deg, rgb(230, 230, 230), white 100%);
+	z-index: -1;
+}
+
+#colorInfo, #exitInfo {
+	background-color: rgba(0, 0, 0, 0.3);
+	color: white;
+	width: 50%;
+	height: 4vh;
+	position: absolute;
+	top: 38%;
+	left: 25%;
+	text-align: center;
+	line-height: 4vh;
+	border-radius: 30px;
+	overflow: hidden;
+	display: none;
+	z-index: 3;
+}
+
+#CoASelector {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.3);
+	display: none;
+}
+
+#CoASelector #closeCoA {
+	width: 100vw;
+	height: 90vh;
+	position: absolute;
+}
+
+#CoASelector #selector {
+	width: 100vw;
+	height: 10vh;
+	position: absolute;
+	background-color: white;
+	top: 100vh;
+	border-top-left-radius: 10vw;
+	border-top-right-radius: 10vw;
+	text-align: center;
+}
+
+#CoASelector #selector input {
+	width: 10vh;
+	height: 10vh;
+	margin-left: 10vw;
+	margin-right: 10vw;
+}

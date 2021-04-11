@@ -1,0 +1,36 @@
+#preview {
+	display: none;
+}
+
+#prev {
+	position: absolute;
+	width: 90%;
+	left: 5%;
+	height: 75vh;
+	top: 10vh;
+}
+
+#preview #btns button {
+	width: 25%;
+	height: 10vw;
+	border: none;
+	background-color: #ffc33a;
+	color: white;
+	position: absolute;
+	padding: 0%;
+	border-radius: 30px;
+	font-size: 100%;
+	outline: none;
+}
+
+#preview #btns button:first-child {
+	left: 8%;
+}
+
+#preview #btns button:nth-child(2) {
+	left: 37.5%;
+}
+
+#preview #btns button:last-child {
+	left: 67%;
+}

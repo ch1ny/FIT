@@ -1,0 +1,25 @@
+#true {
+	visibility: hidden;
+}
+
+#photo {
+	width: 90%;
+	height: 75vh;
+	position: absolute;
+	left: 5%;
+	top: 7vh;
+}
+
+#toScene {
+	background-color: #ffc33a;
+	color: white;
+	width: 20%;
+	height: 9vw;
+	position: absolute;
+	right: 5%;
+	bottom: 3vh;
+	border-radius: 30px;
+	border: none;
+	outline: none;
+	font-family: "黑体";
+}

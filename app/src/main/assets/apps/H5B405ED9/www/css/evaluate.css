@@ -1,0 +1,65 @@
+#evaluate {
+	display: none;
+}
+
+#text {
+	width: 100%;
+	height: 45vh;
+	position: absolute;
+	top: 55vh;
+	left: 0%;
+	background-color: #fff8e6;
+}
+
+#txt {
+	width: 80%;
+	height: 60%;
+	position: absolute;
+	top: 5%;
+	left: 10%;
+	border: none;
+	border-radius: 10px;
+	resize: none;
+	outline: none;
+	font-family: initial;
+	color: #5c5b59;
+	font-size: 100%;
+	overflow-x: hidden;
+}
+
+#tag {
+	width: 100%;
+	color: #565654;
+	height: 5vh;
+	position: absolute;
+	top: -5vh;
+}
+
+#tag span {
+	font-family: initial;
+	background-color: rgba(231, 231, 231, 0.8);
+	border-radius: 30px;
+	padding: 7px;
+	padding-left: 12px;
+	padding-right: 12px;
+	font-size: 80%;
+	position: relative;
+	left: 10%;
+	display: none;
+}
+
+#toEffect {
+	background-color: #ffc33a;
+	color: white;
+	width: 40%;
+	height: 6vh;
+	position: absolute;
+	left: 30%;
+	bottom: 5vh;
+	border: none;
+	outline: none;
+	border-radius: 30px;
+	font-size: 130%;
+	font-weight: bold;
+	letter-spacing: 0.5vw;
+}

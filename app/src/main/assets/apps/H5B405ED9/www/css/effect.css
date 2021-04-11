@@ -1,0 +1,27 @@
+#effect {
+	display: none;
+}
+
+#efct {
+	width: 90%;
+	height: 75vh;
+	position: absolute;
+	top: 7vh;
+	left: 5%;
+}
+
+#toFree {
+	background-color: #ffc33a;
+	color: white;
+	width: 40%;
+	height: 6vh;
+	position: absolute;
+	left: 30%;
+	bottom: 5vh;
+	border: none;
+	outline: none;
+	border-radius: 30px;
+	font-size: 130%;
+	font-weight: bold;
+	letter-spacing: 0.5vw;
+}

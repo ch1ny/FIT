@@ -1,0 +1,118 @@
+body {
+	background-color: #ffc33a;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0%;
+}
+
+#center {
+	background-color: white;
+	width: 70%;
+	height: 70vw;
+	position: absolute;
+	left: 15%;
+	top: 5vh;
+	border-radius: 30px;
+	border-bottom-left-radius: 25px;
+	border: none;
+}
+#center::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 4px;
+	left: -4px;
+	border-top-right-radius: 50px;
+	border-radius: 30px;
+	background: linear-gradient(to right, rgb(230, 230, 230), white 2%);
+	z-index: -1;
+}
+#center::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: -4px;
+	left: 4px;
+	border-top-right-radius: 50px;
+	border-radius: 30px;
+	background: linear-gradient(to top, rgb(230, 230, 230), white 2%);
+	z-index: -2;
+}
+#V-center {
+	width: 70%;
+	height: 70vw;
+	position: absolute;
+	left: -4px;
+	bottom: -4px;
+	border-radius: 30px;
+	border: none;
+	z-index: -2;
+	background: linear-gradient(135deg, rgb(212, 212, 212), white);
+}
+#logo {
+	width: 100%;
+	height: 100%;
+}
+
+.input {
+	width: 70%;
+	height: 10vw;
+	position: absolute;
+	left: 15%;
+	background-color: #ffc33a;
+	color: white;
+	font-size: 150%;
+	outline: none;
+	border: none;
+	border-bottom: 3px solid white;
+}
+.input::-webkit-input-placeholder {
+	color: white;
+	font-size: 80%;
+}
+#name {
+	top: 46vh;
+}
+#tel {
+	top: 54vh;
+}
+#email {
+	top: 62vh;
+}
+#psw {
+	top: 70vh;
+}
+
+#register {
+	width: 40%;
+	height: 17vw;
+	background: white;
+	border: none;
+	color: #ffc33a;
+	font-family: "黑体";
+	font-size: 170%;
+	font-weight: 1000;
+	border-radius: 30px;
+	outline: none;
+	position: absolute;
+	left: 30%;
+	top: 80vh;
+}
+#register::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: -4px;
+	left: -2px;
+	border-top-right-radius: 50px;
+	border-radius: 30px;
+	background: linear-gradient(45deg, rgb(230, 230, 230), white 100%);
+	z-index: -1;
+}

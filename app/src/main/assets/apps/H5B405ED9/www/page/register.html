@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <script src="../js/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="center">
+        <img src="../icon/logo.png" id="logo">
+        <div id="V-center"></div>
+    </div>
+    <div>
+        <input type="text" id="name" class="input" placeholder="请输入您的昵称"><br>
+        <input type="tel" id="tel" class="input" placeholder="请输入您的电话号码" oninput="value=value.replace(/[^\d]/g,'')"
+            maxlength="11"><br>
+        <input type="email" id="email" class="input" placeholder="请输入您的邮箱"><br>
+        <input type="password" id="psw" class="input" placeholder="请输入您的密码" maxlength="20">
+    </div>
+    <button id="register">注册</button>
+
+    <script type="text/javascript">
+        document.addEventListener('plusready', function (a) {
+            plus.key.addEventListener('backbutton', function () {
+                plus.webview.currentWebview().close();
+            }, false);
+        });
+
+        $('#register').click(() => {
+            var nick = $('#name').val();
+            var tel = $('#tel').val();
+            var email = $('#email').val();
+            var psw = $('#psw').val();
+            var warn = "";
+            if (nick == "") {
+                warn += "昵称不能为空！\n";
+            }
+            if (tel.length < 11) {
+                warn += "电话号码不合法！\n";
+            }
+            if (email == "") {
+                warn += "邮箱不能为空！\n";
+            }
+            if (psw.length < 6) {
+                warn += "密码不得小于6位！\n";
+            }
+            if (warn == "") {
+                plus.nativeUI.showWaiting("正在注册...");
+                $.ajax({
+                    type: "POST",
+                    url: "http://118.195.129.134/user/signup",
+                    data: {
+                        nickName: nick,
+                        passWord: psw,
+                        mail: email,
+                        phoneNumber: tel
+                    },
+                    dataType: "json",
+                    success(msg) {
+                        plus.nativeUI.closeWaiting();
+                        if (msg.ret == 1) {
+                            alert("注册失败！" + msg.msg);
+                        } else {
+                            alert("注册成功！现在就去登录吧！");
+                            plus.webview.currentWebview().close();
+                        }
+                    },
+                    error(msg) {
+                        plus.nativeUI.closeWaiting();
+                        alert("啊哦！服务器好像出了点问题呢！");
+                    }
+                })
+            } else {
+                alert(warn);
+            }
+        })
+
+        $(document).ready(function () {
+            //屏幕当前的高度
+            var oHeight = $(window).height();
+            $(window).resize(function () {
+                if ($(window).height() < oHeight) {
+                    $('#center').css({
+                        "top": 0.05 * oHeight + "px"
+                    });
+                    $('#name').css({
+                        "top": 0.46 * oHeight + "px",
+                    });
+                    $('#tel').css({
+                        "top": 0.54 * oHeight + "px",
+                    });
+                    $('#email').css({
+                        "top": 0.62 * oHeight + "px",
+                    });
+                    $('#psw').css({
+                        "top": 0.7 * oHeight + "px",
+                    });
+                    $('#register').css({
+                        "top": 0.8 * oHeight + "px",
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
